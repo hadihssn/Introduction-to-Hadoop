@@ -1,0 +1,45 @@
+***BIG DATA***
+
+To store big data we need frameworks some of which are:  ->Cassandra
+                                                        			   ->Hadoop
+                                                         			   ->Spark
+
+-> Hadoop : Hadoop uses a distributed file system to store data better known as Hadoop Distributed File System (HDFS)
+             	A huge file is broken into smaller chunks and stored on separate machines
+            	This data is not only stored but also duplicated (replication factor of 3 - this makes hdfs fault tolerant)
+           	which is stored on nodes. In this way if one machine stops working that data is already stored on other
+            	machines.
+            
+            HDFS (storage unit) : HDFS is the storage layer of hadoop which stores big data in smaller chunks in different machines
+                  		in a distributed manner and map reduce performs paralled processing on that data.
+            
+            Map Reduce (Processing unit) : 
+                        -> Map reduce technique is used to process big data : 
+                           		Here a lengthy task is broken down into smaller tasks.
+                           		These tasks are alotted to separate machines which work in a parellel manner and 
+                           		assemble the results at the end.
+                           		This makes the processing easier and faster.
+                           		This is known as Parallel Processing.
+                    
+                   1. Input
+                   2. Split (input is split into sub-parts based on some character like full stop etc)
+                   3. Mapper Phase (where occurences of a specific object is counted (for example
+                      occurences of words in blocks))
+                   4. Shuffle and sort (data is then shuffled and sorted on basis of same data. for example
+                      similar words are grouped together)
+                   5. Reduce Phase (all the similar data is counted for example counting the occurences of same 
+                      words.)
+                   
+                   Finally all the result is displayed by aggregating the final output of reduce phase
+                   
+            YARN (yet another resource negotiator) 
+                    -> is a resource manager for processes
+                    -> processes job requests and manages cluster resources
+                    
+                    -> 1. Resource manager : assigns the resources
+                    -> 2. Node manager : handles the nodes and monitors the resource usage in the nodes
+                    -> 3. Cotainers : holds physical resources
+                    
+                    For example in map reduce method : 
+                    	First the application manager requests the container from the node manager. then the node manager
+                    	sends the resources to the resource manager
